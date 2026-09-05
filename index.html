@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Digital - Nokia 6630</title>
+    <!-- Fuente curva estilo globo desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Fondo floral ilustrado */
+            background: #fdf2f8 url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1600&auto=format&fit=crop') center/cover fixed no-repeat;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        /* Capa de suavizado para el fondo floral */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(253, 242, 248, 0.25);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Cuerpo del Nokia 6630 con acabado metálico rosado */
+        .nokia-body {
+            position: relative;
+            z-index: 1;
+            width: 360px;
+            height: 740px;
+            /* Degradado con reflejos de cepillado metálico */
+            background: linear-gradient(135deg, 
+                #fce7f3 0%, 
+                #f472b6 20%, 
+                #f43f5e 45%, 
+                #fda4af 55%, 
+                #e11d48 80%, 
+                #881337 100%);
+            border-radius: 48px;
+            border: 4px solid #fff1f2;
+            box-shadow: 
+                0 30px 60px rgba(136, 19, 55, 0.4),
+                inset 0 4px 10px rgba(255, 255, 255, 0.9),
+                inset 0 -8px 16px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 18px;
+        }
+
+        /* Reflejo metálico diagonal sobre el chasis */
+        .nokia-body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 44px;
+            background: linear-gradient(115deg, 
+                rgba(255,255,255,0.4) 0%, 
+                rgba(255,255,255,0.05) 40%, 
+                transparent 50%, 
+                rgba(255,255,255,0.15) 90%);
+            pointer-events: none;
+        }
+
+        /* Cámara superior y logotipo Nokia */
+        .top-decor {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            margin-bottom: 8px;
+        }
+
+        .camera-lens {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #f472b6 0%, #be185d 40%, #4c0519 100%);
+            border: 3px solid #fecdd3;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4), inset 0 1px 3px rgba(255,255,255,0.8);
+        }
+
+        .nokia-logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(76, 5, 25, 0.6), 0 0 8px rgba(255,255,255,0.5);
+        }
+
+        /* Pantalla digital */
+        .screen-frame {
+            width: 290px;
+            height: 340px;
+            background: #2e1065;
+            border-radius: 16px;
+            border: 3px solid #fecdd3;
+            padding: 10px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .screen-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #831843 0%, #be185d 50%, #f43f5e 100%);
+            border-radius: 10px;
+            padding: 12px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffe4e6;
+            border-bottom: 1px dashed rgba(255,255,255,0.3);
+            padding-bottom: 4px;
+        }
+
+        .screen-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8px 0;
+        }
+
+        .screen-tag {
+            font-size: 0.85rem;
+            color: #fef08a;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .screen-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.25;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .screen-desc {
+            font-size: 0.8rem;
+            color: #fff1f2;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        .screen-footer {
+            border-top: 1px dashed rgba(255,255,255,0.3);
+            padding-top: 4px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #ffe4e6;
+            font-weight: 600;
+        }
+
+        /* Zona de Teclado y Joystick */
+        .keypad-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        /* Joystick central metálico */
+        .joystick-outer {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff 0%, #fecdd3 40%, #e11d48 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.9);
+            margin-bottom: 14px;
+            border: 2px solid #ffffff;
+        }
+
+        .joystick-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fb7185 0%, #e11d48 60%, #9f1239 100%);
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.6);
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Fredoka', cursive, sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .joystick-btn:active {
+            transform: scale(0.92);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        /* Rejilla de teclas numéricas metálicas/curvas */
+        .num-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 260px;
+        }
+
+        .key-btn {
+            height: 44px;
+            background: linear-gradient(180deg, #ffffff 0%, #ffe4e6 60%, #f472b6 100%);
+            border: 1px solid #fda4af;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #be185d, 0 5px 8px rgba(0,0,0,0.25);
+            transition: all 0.1s ease;
+        }
+
+        .key-btn:active, .key-btn.active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #be185d, inset 0 2px 4px rgba(0,0,0,0.2);
+            background: #fecdd3;
+        }
+
+        .key-num {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #881337;
+            line-height: 1;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+        }
+
+        .key-sub {
+            font-size: 0.6rem;
+            color: #9f1239;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nokia-body">
+        
+        <div class="top-decor">
+            <div class="camera-lens"></div>
+            <div class="nokia-logo">NOKIA</div>
+        </div>
+
+        <div class="screen-frame">
+            <div class="screen-inner">
+                <div class="status-bar">
+                    <span>Nokia 3G</span>
+                    <span id="timeDisplay">12:00</span>
+                </div>
+
+                <div class="screen-content">
+                    <div class="screen-tag" id="screenTag">TALLER DE INTERFACES</div>
+                    <div class="screen-title" id="screenTitle">MI PORTAFOLIO</div>
+                    <div class="screen-desc" id="screenDesc">Presiona las teclas (1 al 4) para ver la información. Presiona OK (Centro) para abrir la entrega.</div>
+                </div>
+
+                <div class="screen-footer">
+                    <span>[ Opciones ]</span>
+                    <span>OK (Centro)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="keypad-section">
+            <div class="joystick-outer">
+                <button class="joystick-btn" id="btnCenter">OK</button>
+            </div>
+
+            <div class="num-grid">
+                <div class="key-btn" data-id="1"><span class="key-num">1</span><span class="key-sub">. _ @</span></div>
+                <div class="key-btn" data-id="2"><span class="key-num">2</span><span class="key-sub">abc</span></div>
+                <div class="key-btn" data-id="3"><span class="key-num">3</span><span class="key-sub">def</span></div>
+                <div class="key-btn" data-id="4"><span class="key-num">4</span><span class="key-sub">ghi</span></div>
+                <div class="key-btn" data-id="5"><span class="key-num">5</span><span class="key-sub">jkl</span></div>
+                <div class="key-btn" data-id="6"><span class="key-num">6</span><span class="key-sub">mno</span></div>
+                <div class="key-btn" data-id="7"><span class="key-num">7</span><span class="key-sub">pqrs</span></div>
+                <div class="key-btn" data-id="8"><span class="key-num">8</span><span class="key-sub">tuv</span></div>
+                <div class="key-btn" data-id="9"><span class="key-num">9</span><span class="key-sub">wxyz</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const entregas = {
+            1: {
+                tag: "Entrega N° 1",
+                title: "Lámina de Análisis de Interfaces",
+                desc: "Identificación y clasificación visual de entradas (inputs) y salidas (outputs) de un electrodoméstico de uso cotidiano (Tostadora).",
+                url: "entrega1/index.html"
+            },
+            2: {
+                tag: "Entrega N° 2",
+                title: "Edición de Sonido & Web Interactiva",
+                desc: "Experiencia educativa lúdica e interactiva para la web en la que el sonido procesado en DAW es el pilar central.",
+                url: "entrega2/index.html"
+            },
+            3: {
+                tag: "Entrega N° 3",
+                title: "Síntesis y Control Sonoro en Max/MSP",
+                desc: "Parche en Max/MSP para síntesis de audio y manipulación de muestras en tiempo real en Presentation Mode.",
+                url: "entrega3/index.html"
+            },
+            4: {
+                tag: "Entrega N° 4",
+                title: "Sonificación de Datos e Imágenes",
+                desc: "Traducción de información visual y estructurada a parámetros audibles mediante plataforma web interactiva.",
+                url: "entrega4/index.html"
+            }
+        };
+
+        const screenTag = document.getElementById('screenTag');
+        const screenTitle = document.getElementById('screenTitle');
+        const screenDesc = document.getElementById('screenDesc');
+        const btnCenter = document.getElementById('btnCenter');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const keys = document.querySelectorAll('.key-btn');
+
+        let currentUrl = "entrega1/index.html";
+
+        function updateTime() {
+            const now = new Date();
+            timeDisplay.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        keys.forEach(key => {
+            key.addEventListener('click', () => {
+                const id = key.getAttribute('data-id');
+                
+                keys.forEach(k => k.classList.remove('active'));
+                key.classList.add('active');
+
+                if (entregas[id]) {
+                    screenTag.textContent = entregas[id].tag;
+                    screenTitle.textContent = entregas[id].title;
+                    screenDesc.textContent = entregas[id].desc;
+                    currentUrl = entregas[id].url;
+                } else {
+                    screenTag.textContent = `TECLA [${id}]`;
+                    screenTitle.textContent = "SIN ENTREGA";
+                    screenDesc.textContent = "No hay ningún encargo asignado a esta tecla. Utiliza los botones del 1 al 4.";
+                    currentUrl = "#";
+                }
+            });
+        });
+
+        btnCenter.addEventListener('click', () => {
+            if (currentUrl && currentUrl !== "#") {
+                window.location.href = currentUrl;
+            }
+        });
+    </script>
+</body>
+</html>

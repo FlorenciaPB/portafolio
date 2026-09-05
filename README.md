@@ -3,6 +3,7 @@
 Bienvenido al repositorio principal de mi portafolio web interactivo. Este sitio reúne una serie de encargas y proyectos desarrollados con tecnologías web (HTML5, CSS3, JavaScript ES6+, Web Audio API), integración de elementos multimedia y programación visual de audio en Max/MSP.
 
 📦 Resumen de Entregas
+
 📂 Entrega 1: Exploración Visual
 Interfaz interactiva enfocada en el despliegue y análisis de recursos visuales y esquemas del proyecto.
 

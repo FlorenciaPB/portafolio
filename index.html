@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Digital - Nokia 6630</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Fredoka & VT323 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=VT323&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
             overflow-x: hidden;
         }
 
-        /* Capa de suavizado para el fondo floral */
+        /* Capa de suavizado para el fondo floral rosado */
         body::before {
             content: '';
             position: absolute;
@@ -45,13 +45,13 @@
             pointer-events: none;
         }
 
-        /* Chasis Nokia 6630 */
+        /* Chasis Nokia 6630 metálico rosado */
         .nokia-body {
             position: relative;
             z-index: 10;
             width: 360px;
             max-width: 100%;
-            height: 760px;
+            height: 750px;
             background: linear-gradient(135deg, 
                 #fce7f3 0%, 
                 #f472b6 20%, 
@@ -131,7 +131,7 @@
         /* Pantalla digital */
         .screen-frame {
             width: 290px;
-            height: 330px;
+            height: 335px;
             background: #2e1065;
             border-radius: 16px;
             border: 3px solid #fecdd3;
@@ -157,7 +157,7 @@
             position: relative;
         }
 
-        /* Scanline retro effect overlay */
+        /* Efecto de líneas de escaneo retro */
         .screen-inner::before {
             content: " ";
             display: block;
@@ -204,7 +204,7 @@
             color: #fef08a;
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
             background: rgba(0, 0, 0, 0.25);
             padding: 2px 10px;
@@ -225,7 +225,7 @@
             color: #fff1f2;
             line-height: 1.35;
             font-weight: 400;
-            max-height: 110px;
+            max-height: 115px;
             overflow-y: auto;
             padding: 0 4px;
         }
@@ -241,29 +241,19 @@
             z-index: 6;
         }
 
-        /* Controls Section */
+        /* Sección de controles y teclado */
         .keypad-section {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 14px;
+            margin-top: 16px;
         }
 
-        /* Joystick & Navigation pad */
-        .joystick-container {
-            position: relative;
-            width: 110px;
-            height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
+        /* Anillo metálico exterior y botón central OK sin flechas */
         .joystick-outer {
-            width: 80px;
-            height: 80px;
+            width: 78px;
+            height: 78px;
             border-radius: 50%;
             background: linear-gradient(135deg, #ffffff 0%, #fecdd3 40%, #e11d48 100%);
             display: flex;
@@ -271,31 +261,13 @@
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.9);
             border: 2px solid #ffffff;
+            margin-bottom: 14px;
             position: relative;
         }
 
-        .d-pad-arrow {
-            position: absolute;
-            background: transparent;
-            border: none;
-            color: #9f1239;
-            font-size: 0.75rem;
-            cursor: pointer;
-            padding: 2px;
-            z-index: 12;
-            transition: color 0.1s ease, transform 0.1s ease;
-        }
-        .d-pad-arrow:hover { color: #fff; }
-        .d-pad-arrow:active { transform: scale(0.85); }
-
-        .d-pad-up { top: 2px; left: 50%; transform: translateX(-50%); }
-        .d-pad-down { bottom: 2px; left: 50%; transform: translateX(-50%); }
-        .d-pad-left { left: 4px; top: 50%; transform: translateY(-50%); }
-        .d-pad-right { right: 4px; top: 50%; transform: translateY(-50%); }
-
         .joystick-btn {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: radial-gradient(circle at 35% 35%, #fb7185 0%, #e11d48 60%, #9f1239 100%);
             border: 2px solid #ffffff;
@@ -308,7 +280,7 @@
             color: #fff;
             font-family: 'Fredoka', cursive, sans-serif;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             z-index: 10;
         }
 
@@ -318,16 +290,16 @@
             background: radial-gradient(circle at 35% 35%, #e11d48 0%, #9f1239 100%);
         }
 
-        /* Numeric Keypad Grid */
+        /* Rejilla de teclas numéricas */
         .num-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            gap: 9px;
             width: 260px;
         }
 
         .key-btn {
-            height: 42px;
+            height: 43px;
             background: linear-gradient(180deg, #ffffff 0%, #ffe4e6 60%, #f472b6 100%);
             border: 1px solid #fda4af;
             border-radius: 14px;
@@ -364,7 +336,7 @@
             font-weight: 600;
         }
 
-        /* Toast / Flash Notification inside retro screen */
+        /* Notificación retro dentro de la pantalla */
         .retro-toast {
             position: absolute;
             top: 50%;
@@ -384,53 +356,18 @@
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
+
         .retro-toast.show {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* Modal Preview Overlay */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(6px);
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-        }
-
-        .modal-backdrop.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-card {
-            background: #fff;
-            width: 100%;
-            max-width: 500px;
-            border-radius: 24px;
-            padding: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-            transform: translateY(20px);
-            transition: transform 0.25s ease;
-        }
-
-        .modal-backdrop.active .modal-card {
-            transform: translateY(0);
-        }
-
-        /* Sound Indicator Toggle */
+        /* Botón flotante para silenciar/activar audio */
         .sound-toggle {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(4px);
             border: 1px solid #fda4af;
             border-radius: 20px;
@@ -444,29 +381,34 @@
             align-items: center;
             gap: 6px;
             z-index: 30;
+            transition: transform 0.1s ease;
+        }
+
+        .sound-toggle:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
 
-    <!-- Sound Effect Toggle -->
+    <!-- Control de sonido del teclado -->
     <button class="sound-toggle" id="soundToggle" title="Activar/Desactivar Sonido Teclado">
         <span id="soundIcon">🔊</span> <span id="soundText">Audio ON</span>
     </button>
 
-    <!-- Nokia 6630 Phone Shell -->
+    <!-- Chasis Nokia 6630 -->
     <div class="nokia-body">
         
-        <!-- Top Speaker and Camera -->
+        <!-- Cámara frontal y marca -->
         <div class="top-decor">
             <div class="camera-lens" title="Cámara Frontal 3G"></div>
             <div class="nokia-logo">NOKIA</div>
         </div>
 
-        <!-- Phone Display Screen -->
+        <!-- Pantalla digital -->
         <div class="screen-frame">
             <div class="screen-inner">
-                <!-- Retro Toast Message -->
+                <!-- Notificación retro temporal -->
                 <div class="retro-toast" id="retroToast">ABRIENDO...</div>
 
                 <div class="status-bar">
@@ -483,32 +425,25 @@
                 <div class="screen-content" id="screenContent">
                     <div class="screen-tag" id="screenTag">TALLER DE INTERFACES</div>
                     <div class="screen-title" id="screenTitle">MI PORTAFOLIO</div>
-                    <div class="screen-desc" id="screenDesc">Presiona las teclas (1 al 4) para ver los encargos. Presiona OK (Centro) para abrir la entrega seleccionada.</div>
+                    <div class="screen-desc" id="screenDesc">Presiona las teclas (1 al 8) para ver la información. Presiona OK (Centro) para abrir la entrega seleccionada.</div>
                 </div>
 
                 <div class="screen-footer">
-                    <span>[ Teclas 1-9 ]</span>
+                    <span>[ Teclas 1-8 ]</span>
                     <span class="font-bold text-yellow-200">OK (Centro)</span>
                 </div>
             </div>
         </div>
 
-        <!-- Keypad & Joystick Section -->
+        <!-- Zona de Joystick central y teclado numérico -->
         <div class="keypad-section">
             
-            <!-- Joystick + D-Pad Directional Nav -->
-            <div class="joystick-container">
-                <button class="d-pad-arrow d-pad-up" id="btnUp" title="Anterior">▲</button>
-                <button class="d-pad-arrow d-pad-down" id="btnDown" title="Siguiente">▼</button>
-                <button class="d-pad-arrow d-pad-left" id="btnLeft" title="Anterior">◄</button>
-                <button class="d-pad-arrow d-pad-right" id="btnRight" title="Siguiente">►</button>
-                
-                <div class="joystick-outer">
-                    <button class="joystick-btn" id="btnCenter" title="Ejecutar / Abrir enlace">OK</button>
-                </div>
+            <!-- Únicamente anillo metálico exterior y botón central OK -->
+            <div class="joystick-outer">
+                <button class="joystick-btn" id="btnCenter" title="Abrir entrega seleccionada">OK</button>
             </div>
 
-            <!-- Numeric Keypad Grid -->
+            <!-- Rejilla de teclas numéricas 1 al 9 -->
             <div class="num-grid">
                 <div class="key-btn" data-id="1" id="key-1"><span class="key-num">1</span><span class="key-sub">. _ @</span></div>
                 <div class="key-btn" data-id="2" id="key-2"><span class="key-num">2</span><span class="key-sub">abc</span></div>
@@ -524,40 +459,8 @@
 
     </div>
 
-    <!-- Modal Drawer Preview overlay -->
-    <div class="modal-backdrop" id="modalBackdrop">
-        <div class="modal-card">
-            <div class="flex justify-between items-start mb-4">
-                <div>
-                    <span class="text-xs font-bold text-pink-600 bg-pink-100 px-2 py-1 rounded-full uppercase tracking-wider" id="modalTag">Entrega N° 1</span>
-                    <h3 class="text-xl font-bold text-slate-800 mt-1" id="modalTitle">Lámina de Análisis de Interfaces</h3>
-                </div>
-                <button id="modalClose" class="text-slate-400 hover:text-slate-600 text-2xl font-bold px-2">&times;</button>
-            </div>
-            
-            <p class="text-slate-600 text-sm leading-relaxed mb-6" id="modalDesc">
-                Identificación y clasificación visual de entradas (inputs) y salidas (outputs) de un electrodoméstico de uso cotidiano (Tostadora).
-            </p>
-
-            <div class="bg-rose-50 border border-rose-200 rounded-xl p-4 mb-6">
-                <div class="text-xs text-rose-700 font-semibold mb-1">Ruta del Proyecto:</div>
-                <div class="text-sm font-mono text-rose-950 font-medium break-all" id="modalUrl">entrega1/index.html</div>
-            </div>
-
-            <div class="flex gap-3 justify-end">
-                <button id="modalCancel" class="px-4 py-2 rounded-xl text-slate-600 font-medium hover:bg-slate-100 transition-colors text-sm">
-                    Volver al Teléfono
-                </button>
-                <a id="modalConfirm" href="#" target="_blank" class="px-5 py-2 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-semibold transition-colors shadow-lg shadow-pink-200 text-sm flex items-center gap-2">
-                    <span>Abrir Enlace</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 2 2 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Entregas Data Object
+        // Configuración de las 7 entregas del portafolio
         const entregas = {
             1: {
                 tag: "Entrega N° 1",
@@ -585,19 +488,31 @@
             },
             5: {
                 tag: "Entrega N° 5",
-                title: "Controlador Físico",
-                desc: "Proyecto de interfaz de hardware y controlador físico interactivo.",
+                title: "Controlador Físico con Arduino y Web Serial",
+                desc: "Prototipo físico con Arduino Uno y Web Serial API para interacción en tiempo real.",
                 url: "https://florenciapb.github.io/Entrega1ControladorFisico/"
             },
             6: {
                 tag: "Entrega N° 6",
-                title: "Sistema Interactivo",
-                desc: "Proyecto de sistema interactivo con síntesis de audio y respuesta sensorial en tiempo real.",
+                title: "Sistema Interactivo de Faro Morse por Voz",
+                desc: "Experiencia interactiva conectando reconocimiento de voz y transmisión lumínica/sonora en código Morse.",
                 url: "https://florenciapb.github.io/Entrega2SistemaInteractivo/"
+            },
+            7: {
+                tag: "Entrega N° 7",
+                title: "Realidad Virtual & Paisajes 360°",
+                desc: "Escena inmersiva en WebVR (A-Frame) con entornos de paisajes en 360° y portales interactivos activados por mirada.",
+                url: "https://florenciapb.github.io/realidadvirtualpaisajes/"
+            },
+            8: {
+                tag: "Entrega N° 8",
+                title: "Cortadora de Fruta con MediaPipe",
+                desc: "Juego interactivo web controlado mediante seguimiento de manos y visión por computador en tiempo real con MediaPipe.",
+                url: "https://florenciapb.github.io/cortadoradefruta.medipipe/"
             }
         };
 
-        // DOM Elements
+        // Referencias al DOM
         const screenContent = document.getElementById('screenContent');
         const screenTag = document.getElementById('screenTag');
         const screenTitle = document.getElementById('screenTitle');
@@ -606,36 +521,18 @@
         const timeDisplay = document.getElementById('timeDisplay');
         const keys = document.querySelectorAll('.key-btn');
         const retroToast = document.getElementById('retroToast');
-        
-        // D-Pad buttons
-        const btnUp = document.getElementById('btnUp');
-        const btnDown = document.getElementById('btnDown');
-        const btnLeft = document.getElementById('btnLeft');
-        const btnRight = document.getElementById('btnRight');
 
-        // Modal Elements
-        const modalBackdrop = document.getElementById('modalBackdrop');
-        const modalTag = document.getElementById('modalTag');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-        const modalUrl = document.getElementById('modalUrl');
-        const modalConfirm = document.getElementById('modalConfirm');
-        const modalClose = document.getElementById('modalClose');
-        const modalCancel = document.getElementById('modalCancel');
-
-        // Sound State
+        // Controles de audio
         const soundToggle = document.getElementById('soundToggle');
         const soundIcon = document.getElementById('soundIcon');
         const soundText = document.getElementById('soundText');
         let soundEnabled = true;
 
-        // Current state tracking
-        let currentKeyId = 1;
+        // Estado actual de selección
         let currentUrl = entregas[1].url;
-
-        // Web Audio Synthesizer for Retro Nokia Keypad Beeps
         let audioCtx = null;
 
+        // Sintetizador de tonos retro mediante Web Audio API
         function playKeyBeep(frequency = 600, duration = 0.05) {
             if (!soundEnabled) return;
             try {
@@ -659,12 +556,12 @@
                 
                 osc.start();
                 osc.stop(audioCtx.currentTime + duration);
-            } catch(e) {
-                // Audio context fallbacks handled gracefully
+            } catch (e) {
+                // Manejo silencioso si el navegador bloquea el contexto de audio
             }
         }
 
-        // Toggle Sound Settings
+        // Alternar estado de sonido
         soundToggle.addEventListener('click', () => {
             soundEnabled = !soundEnabled;
             if (soundEnabled) {
@@ -677,7 +574,7 @@
             }
         });
 
-        // Update Phone Clock dynamically
+        // Actualizar reloj en tiempo real
         function updateTime() {
             const now = new Date();
             timeDisplay.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -685,20 +582,17 @@
         setInterval(updateTime, 1000);
         updateTime();
 
-        // Show Temporary Retro Notification
+        // Mostrar notificación temporal en la pantalla del teléfono
         function showToast(msg) {
             retroToast.textContent = msg;
             retroToast.classList.add('show');
             setTimeout(() => {
                 retroToast.classList.remove('show');
-            }, 1200);
+            }, 1100);
         }
 
-        // Display Data Switcher with Smooth Retro Transition
+        // Seleccionar y mostrar información de una entrega
         function selectAssignment(id) {
-            currentKeyId = parseInt(id);
-
-            // Highlight active key on UI
             keys.forEach(k => {
                 if (k.getAttribute('data-id') === String(id)) {
                     k.classList.add('active');
@@ -707,7 +601,6 @@
                 }
             });
 
-            // Smooth display text transition
             screenContent.classList.add('fade-out');
 
             setTimeout(() => {
@@ -716,19 +609,36 @@
                     screenTitle.textContent = entregas[id].title;
                     screenDesc.textContent = entregas[id].desc;
                     currentUrl = entregas[id].url;
-                    playKeyBeep(700, 0.06);
+                    playKeyBeep(650 + (parseInt(id) * 35), 0.06);
                 } else {
                     screenTag.textContent = `TECLA [${id}]`;
                     screenTitle.textContent = "SIN ENTREGA";
-                    screenDesc.textContent = "No hay ningún encargo asignado a esta tecla. Utiliza los botones del 1 al 4 para explorar los trabajos.";
+                    screenDesc.textContent = "No hay ningún encargo asignado a esta tecla. Utiliza los botones del 1 al 8.";
                     currentUrl = "#";
-                    playKeyBeep(350, 0.08);
+                    playKeyBeep(320, 0.08);
                 }
                 screenContent.classList.remove('fade-out');
-            }, 120);
+            }, 100);
         }
 
-        // Click Listeners for Keypad Buttons
+        // Ejecutar apertura de la entrega seleccionada
+        function openCurrentAssignment() {
+            btnCenter.classList.add('active');
+            setTimeout(() => btnCenter.classList.remove('active'), 150);
+
+            if (currentUrl && currentUrl !== "#") {
+                playKeyBeep(950, 0.1);
+                showToast("ABRIENDO...");
+                setTimeout(() => {
+                    window.location.href = currentUrl;
+                }, 250);
+            } else {
+                playKeyBeep(280, 0.12);
+                showToast("SIN ENLACE");
+            }
+        }
+
+        // Eventos clic en teclas numéricas 1 al 9
         keys.forEach(key => {
             key.addEventListener('click', () => {
                 const id = key.getAttribute('data-id');
@@ -736,97 +646,18 @@
             });
         });
 
-        // Directional Joystick Navigation (Next / Previous Assignment)
-        function navigateNext() {
-            let nextId = currentKeyId + 1;
-            if (nextId > 9) nextId = 1;
-            selectAssignment(nextId);
-        }
+        // Evento clic en botón central OK
+        btnCenter.addEventListener('click', openCurrentAssignment);
 
-        function navigatePrev() {
-            let prevId = currentKeyId - 1;
-            if (prevId < 1) prevId = 9;
-            selectAssignment(prevId);
-        }
-
-        btnUp.addEventListener('click', navigatePrev);
-        btnLeft.addEventListener('click', navigatePrev);
-        btnDown.addEventListener('click', navigateNext);
-        btnRight.addEventListener('click', navigateNext);
-
-        // Open Modal / Link Action
-        function executeAction() {
-            btnCenter.classList.add('active');
-            setTimeout(() => btnCenter.classList.remove('active'), 150);
-
-            if (currentUrl && currentUrl !== "#" && entregas[currentKeyId]) {
-                playKeyBeep(950, 0.12);
-                showToast("CARGANDO...");
-                
-                // Open modal preview
-                setTimeout(() => {
-                    const data = entregas[currentKeyId];
-                    modalTag.textContent = data.tag;
-                    modalTitle.textContent = data.title;
-                    modalDesc.textContent = data.desc;
-                    modalUrl.textContent = data.url;
-                    modalConfirm.href = data.url;
-                    
-                    modalBackdrop.classList.add('active');
-                }, 300);
-            } else {
-                playKeyBeep(250, 0.15);
-                showToast("SIN ACCIÓN");
-            }
-        }
-
-        btnCenter.addEventListener('click', executeAction);
-
-        // Modal Close Actions
-        function closeModal() {
-            modalBackdrop.classList.remove('active');
-            playKeyBeep(500, 0.05);
-        }
-
-        modalClose.addEventListener('click', closeModal);
-        modalCancel.addEventListener('click', closeModal);
-        modalBackdrop.addEventListener('click', (e) => {
-            if (e.target === modalBackdrop) closeModal();
-        });
-
-        // Physical Keyboard Shortcuts Support
+        // Soporte para teclado físico (teclas 1-9 y Enter/Espacio para OK)
         document.addEventListener('keydown', (e) => {
-            // Handle number keys 1-9
             if (e.key >= '1' && e.key <= '9') {
                 selectAssignment(e.key);
-            } 
-            // Handle arrow navigation
-            else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            } else if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                navigatePrev();
-            } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-                e.preventDefault();
-                navigateNext();
-            } 
-            // Handle Enter / Space bar for OK button
-            else if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                if (modalBackdrop.classList.contains('active')) {
-                    modalConfirm.click();
-                } else {
-                    executeAction();
-                }
-            } 
-            // Handle Escape for modal close
-            else if (e.key === 'Escape') {
-                if (modalBackdrop.classList.contains('active')) {
-                    closeModal();
-                }
+                openCurrentAssignment();
             }
         });
-
-        // Initial setup
-        selectAssignment(1);
     </script>
 </body>
 </html>

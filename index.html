@@ -1,57 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Digital - Nokia 6630</title>
-    <!-- Google Fonts: Fredoka & VT323 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=VT323&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        body {
-            font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #fdf2f8 url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1600&auto=format&fit=crop') center/cover fixed no-repeat;
-            padding: 1.5rem 1rem;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Capa de suavizado para el fondo floral rosado */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(253, 242, 248, 0.45);
-            backdrop-filter: blur(4px);
-            z-index: 0;
-            pointer-events: none;
-        }
-
+<!-- ... existing code ... -->
         /* Chasis Nokia 6630 metálico rosado */
         .nokia-body {
             position: relative;
             z-index: 10;
             width: 360px;
             max-width: 100%;
-            height: 750px;
+            height: 800px;
             background: linear-gradient(135deg, 
                 #fce7f3 0%, 
                 #f472b6 20%, 
@@ -73,187 +27,19 @@
         }
 
         /* Reflejo metálico diagonal sobre el chasis */
-        .nokia-body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 44px;
-            background: linear-gradient(115deg, 
-                rgba(255,255,255,0.4) 0%, 
-                rgba(255,255,255,0.05) 40%, 
-                transparent 50%, 
-                rgba(255,255,255,0.15) 90%);
-            pointer-events: none;
-        }
-
-        /* Cámara superior y logotipo Nokia */
-        .top-decor {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 10px;
-            margin-bottom: 10px;
-        }
-
-        .camera-lens {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #f472b6 0%, #be185d 40%, #4c0519 100%);
-            border: 3px solid #fecdd3;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.4), inset 0 1px 3px rgba(255,255,255,0.8);
-            position: relative;
-        }
-
-        .camera-lens::after {
-            content: '';
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        .nokia-logo {
-            font-weight: 700;
-            font-size: 1.4rem;
-            letter-spacing: 3px;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(76, 5, 25, 0.6), 0 0 8px rgba(255,255,255,0.5);
-        }
-
-        /* Pantalla digital */
-        .screen-frame {
-            width: 290px;
-            height: 335px;
-            background: #2e1065;
-            border-radius: 16px;
-            border: 3px solid #fecdd3;
-            padding: 8px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .screen-inner {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, #831843 0%, #be185d 50%, #f43f5e 100%);
-            border-radius: 10px;
-            padding: 10px 12px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        /* Efecto de líneas de escaneo retro */
-        .screen-inner::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.12) 50%);
-            background-size: 100% 4px;
-            z-index: 5;
-            pointer-events: none;
-            opacity: 0.6;
-        }
-
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #ffe4e6;
-            border-bottom: 1px dashed rgba(255,255,255,0.3);
-            padding-bottom: 4px;
-            z-index: 6;
-        }
-
-        .screen-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 8px 4px;
-            z-index: 6;
-            transition: opacity 0.15s ease, transform 0.15s ease;
-        }
-
-        .screen-content.fade-out {
-            opacity: 0;
-            transform: scale(0.95);
-        }
-
-        .screen-tag {
-            font-size: 0.75rem;
-            color: #fef08a;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-            background: rgba(0, 0, 0, 0.25);
-            padding: 2px 10px;
-            border-radius: 12px;
-        }
-
-        .screen-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-            line-height: 1.25;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-        }
-
-        .screen-desc {
-            font-size: 0.78rem;
-            color: #fff1f2;
-            line-height: 1.35;
-            font-weight: 400;
-            max-height: 115px;
-            overflow-y: auto;
-            padding: 0 4px;
-        }
-
-        .screen-footer {
-            border-top: 1px dashed rgba(255,255,255,0.3);
-            padding-top: 4px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: #ffe4e6;
-            font-weight: 600;
-            z-index: 6;
-        }
-
-        /* Sección de controles y teclado */
+<!-- ... existing code ... -->
         .keypad-section {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 16px;
+            margin-top: 14px;
         }
 
         /* Anillo metálico exterior y botón central OK sin flechas */
         .joystick-outer {
-            width: 78px;
-            height: 78px;
+            width: 74px;
+            height: 74px;
             border-radius: 50%;
             background: linear-gradient(135deg, #ffffff 0%, #fecdd3 40%, #e11d48 100%);
             display: flex;
@@ -261,45 +47,22 @@
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.9);
             border: 2px solid #ffffff;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             position: relative;
         }
 
         .joystick-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, #fb7185 0%, #e11d48 60%, #9f1239 100%);
-            border: 2px solid #ffffff;
-            cursor: pointer;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.6);
-            transition: transform 0.1s ease, box-shadow 0.1s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-family: 'Fredoka', cursive, sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            z-index: 10;
-        }
-
-        .joystick-btn:active, .joystick-btn.active {
-            transform: scale(0.92);
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
-            background: radial-gradient(circle at 35% 35%, #e11d48 0%, #9f1239 100%);
-        }
-
+<!-- ... existing code ... -->
         /* Rejilla de teclas numéricas */
         .num-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 9px;
+            gap: 8px;
             width: 260px;
         }
 
         .key-btn {
-            height: 43px;
+            height: 41px;
             background: linear-gradient(180deg, #ffffff 0%, #ffe4e6 60%, #f472b6 100%);
             border: 1px solid #fda4af;
             border-radius: 14px;
@@ -313,79 +76,128 @@
         }
 
         .key-btn:hover {
-            filter: brightness(1.03);
-        }
-
-        .key-btn:active, .key-btn.active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #be185d, inset 0 2px 4px rgba(0,0,0,0.2);
-            background: #fecdd3;
-        }
-
-        .key-num {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #881337;
-            line-height: 1;
-            text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-        }
-
-        .key-sub {
-            font-size: 0.55rem;
-            color: #9f1239;
-            font-weight: 600;
-        }
-
-        /* Notificación retro dentro de la pantalla */
-        .retro-toast {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            background: rgba(15, 23, 42, 0.92);
-            color: #4ade80;
-            font-family: 'VT323', monospace;
-            padding: 10px 16px;
-            border-radius: 8px;
-            border: 2px solid #22c55e;
-            font-size: 1.2rem;
-            z-index: 20;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .retro-toast.show {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* Botón flotante para silenciar/activar audio */
-        .sound-toggle {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(4px);
-            border: 1px solid #fda4af;
-            border-radius: 20px;
-            padding: 6px 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #be185d;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            z-index: 30;
-            transition: transform 0.1s ease;
-        }
-
+<!-- ... existing code ... -->
         .sound-toggle:active {
             transform: scale(0.95);
+        }
+
+        /* Visor modal integrado para las entregas */
+        .viewer-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: #1f0915;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.96);
+            transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .viewer-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        .viewer-topbar {
+            background: linear-gradient(135deg, #fce7f3 0%, #f472b6 25%, #e11d48 75%, #881337 100%);
+            border-bottom: 3px solid #fff1f2;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            box-shadow: 0 4px 16px rgba(136, 19, 55, 0.45);
+            z-index: 10;
+        }
+
+        .btn-back-nokia {
+            background: linear-gradient(180deg, #ffffff 0%, #ffe4e6 100%);
+            color: #881337;
+            border: 2px solid #fda4af;
+            border-radius: 9999px;
+            padding: 7px 16px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 3px 0 #be185d, 0 4px 8px rgba(0,0,0,0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .btn-back-nokia:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #be185d;
+        }
+
+        .viewer-title-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .viewer-badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #fef08a;
+            background: rgba(76, 5, 25, 0.45);
+            padding: 1px 10px;
+            border-radius: 9999px;
+            letter-spacing: 0.5px;
+        }
+
+        .viewer-title {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-shadow: 0 1px 3px rgba(76, 5, 25, 0.7);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 45vw;
+        }
+
+        .btn-external-link {
+            background: rgba(76, 5, 25, 0.55);
+            color: #fff1f2;
+            border: 1.5px solid rgba(255, 241, 242, 0.7);
+            border-radius: 9999px;
+            padding: 7px 14px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            transition: background 0.15s ease;
+        }
+
+        .btn-external-link:hover {
+            background: rgba(76, 5, 25, 0.8);
+        }
+
+        .viewer-frame-wrapper {
+            position: relative;
+            flex: 1;
+            width: 100%;
+            background: #ffffff;
+        }
+
+        .viewer-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
     </style>
 </head>
@@ -396,40 +208,46 @@
         <span id="soundIcon">🔊</span> <span id="soundText">Audio ON</span>
     </button>
 
+    <!-- Visor Modal Integrado con Botón Regresar al Celular -->
+    <div class="viewer-overlay" id="viewerOverlay" aria-hidden="true">
+        <div class="viewer-topbar">
+            <button class="btn-back-nokia" id="btnBackToPhone" title="Regresar al Nokia 6630 (Esc)">
+                <span>← Volver al Celular</span>
+            </button>
+
+            <div class="viewer-title-group">
+                <span class="viewer-badge" id="viewerTag">ENTREGA</span>
+                <span class="viewer-title" id="viewerTitle">Cargando proyecto...</span>
+            </div>
+
+            <a class="btn-external-link" id="btnExternalLink" href="#" target="_blank" rel="noopener noreferrer" title="Abrir en pestaña independiente">
+                <span>Abrir en nueva pestaña ↗</span>
+            </a>
+        </div>
+        <div class="viewer-frame-wrapper">
+            <iframe
+                class="viewer-iframe"
+                id="viewerIframe"
+                src="about:blank"
+                allow="camera; microphone; serial; xr-spatial-tracking; fullscreen"
+                title="Visor de Entrega del Portafolio">
+            </iframe>
+        </div>
+    </div>
+
     <!-- Chasis Nokia 6630 -->
     <div class="nokia-body">
         
         <!-- Cámara frontal y marca -->
-        <div class="top-decor">
-            <div class="camera-lens" title="Cámara Frontal 3G"></div>
-            <div class="nokia-logo">NOKIA</div>
-        </div>
-
-        <!-- Pantalla digital -->
-        <div class="screen-frame">
-            <div class="screen-inner">
-                <!-- Notificación retro temporal -->
-                <div class="retro-toast" id="retroToast">ABRIENDO...</div>
-
-                <div class="status-bar">
-                    <div class="flex items-center gap-1">
-                        <span class="text-xs">📶</span>
-                        <span>Nokia 3G</span>
-                    </div>
-                    <span id="timeDisplay">12:00</span>
-                    <div class="flex items-center gap-1">
-                        <span id="batteryIcon">🔋 98%</span>
-                    </div>
-                </div>
-
+<!-- ... existing code ... -->
                 <div class="screen-content" id="screenContent">
                     <div class="screen-tag" id="screenTag">TALLER DE INTERFACES</div>
                     <div class="screen-title" id="screenTitle">MI PORTAFOLIO</div>
-                    <div class="screen-desc" id="screenDesc">Presiona las teclas (1 al 8) para ver la información. Presiona OK (Centro) para abrir la entrega seleccionada.</div>
+                    <div class="screen-desc" id="screenDesc">Presiona las teclas (1 al 9) para ver cada entrega (0 lista para próxima tarea). Presiona OK (Centro) para abrir.</div>
                 </div>
 
                 <div class="screen-footer">
-                    <span>[ Teclas 1-8 ]</span>
+                    <span>[ Teclas 1-9 / 0 ]</span>
                     <span class="font-bold text-yellow-200">OK (Centro)</span>
                 </div>
             </div>
@@ -443,7 +261,7 @@
                 <button class="joystick-btn" id="btnCenter" title="Abrir entrega seleccionada">OK</button>
             </div>
 
-            <!-- Rejilla de teclas numéricas 1 al 9 -->
+            <!-- Rejilla de teclas numéricas clásica Nokia (4 filas) -->
             <div class="num-grid">
                 <div class="key-btn" data-id="1" id="key-1"><span class="key-num">1</span><span class="key-sub">. _ @</span></div>
                 <div class="key-btn" data-id="2" id="key-2"><span class="key-num">2</span><span class="key-sub">abc</span></div>
@@ -454,13 +272,16 @@
                 <div class="key-btn" data-id="7" id="key-7"><span class="key-num">7</span><span class="key-sub">pqrs</span></div>
                 <div class="key-btn" data-id="8" id="key-8"><span class="key-num">8</span><span class="key-sub">tuv</span></div>
                 <div class="key-btn" data-id="9" id="key-9"><span class="key-num">9</span><span class="key-sub">wxyz</span></div>
+                <div class="key-btn" data-id="*" id="key-star" title="Volver a portada"><span class="key-num">*</span><span class="key-sub">+</span></div>
+                <div class="key-btn" data-id="0" id="key-0" title="Próxima entrega"><span class="key-num">0</span><span class="key-sub">␣</span></div>
+                <div class="key-btn" data-id="#" id="key-hash" title="Índice de teclas"><span class="key-num">#</span><span class="key-sub">⇧</span></div>
             </div>
         </div>
 
     </div>
 
     <script>
-        // Configuración de las 7 entregas del portafolio
+        // Configuración de las entregas del portafolio (1 al 9 + espacio 0)
         const entregas = {
             1: {
                 tag: "Entrega N° 1",
@@ -488,13 +309,13 @@
             },
             5: {
                 tag: "Entrega N° 5",
-                title: "Controlador Físico con Arduino y Web Serial",
+                title: "Controlador Físico & Juego Musical",
                 desc: "Prototipo físico con Arduino Uno y Web Serial API para interacción en tiempo real.",
                 url: "https://florenciapb.github.io/Entrega1ControladorFisico/"
             },
             6: {
                 tag: "Entrega N° 6",
-                title: "Sistema Interactivo de Faro Morse por Voz",
+                title: "Sistema Interactivo & Web Serial",
                 desc: "Experiencia interactiva conectando reconocimiento de voz y transmisión lumínica/sonora en código Morse.",
                 url: "https://florenciapb.github.io/Entrega2SistemaInteractivo/"
             },
@@ -509,6 +330,18 @@
                 title: "Cortadora de Fruta con MediaPipe",
                 desc: "Juego interactivo web controlado mediante seguimiento de manos y visión por computador en tiempo real con MediaPipe.",
                 url: "https://florenciapb.github.io/cortadoradefruta.medipipe/"
+            },
+            9: {
+                tag: "Entrega N° 9",
+                title: "Concurso Chile Re-descubre",
+                desc: "Juego interactivo educativo sobre patrimonio y cultura ancestral desarrollado para el concurso Chile Re-descubre.",
+                url: "https://florenciapb.github.io/concursoChileRe-descubre/"
+            },
+            0: {
+                tag: "Entrega N° 10",
+                title: "Espacio Disponible / Próxima Tarea",
+                desc: "Tecla 0 lista para enlazar tu siguiente tarea en el código.",
+                url: "#"
             }
         };
 
@@ -522,6 +355,14 @@
         const keys = document.querySelectorAll('.key-btn');
         const retroToast = document.getElementById('retroToast');
 
+        // Referencias del Visor Modal Integrado
+        const viewerOverlay = document.getElementById('viewerOverlay');
+        const btnBackToPhone = document.getElementById('btnBackToPhone');
+        const viewerTag = document.getElementById('viewerTag');
+        const viewerTitle = document.getElementById('viewerTitle');
+        const btnExternalLink = document.getElementById('btnExternalLink');
+        const viewerIframe = document.getElementById('viewerIframe');
+
         // Controles de audio
         const soundToggle = document.getElementById('soundToggle');
         const soundIcon = document.getElementById('soundIcon');
@@ -529,72 +370,17 @@
         let soundEnabled = true;
 
         // Estado actual de selección
+        let currentId = "1";
         let currentUrl = entregas[1].url;
         let audioCtx = null;
 
         // Sintetizador de tonos retro mediante Web Audio API
-        function playKeyBeep(frequency = 600, duration = 0.05) {
-            if (!soundEnabled) return;
-            try {
-                if (!audioCtx) {
-                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                }
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
-                
-                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-                
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                
-                osc.start();
-                osc.stop(audioCtx.currentTime + duration);
-            } catch (e) {
-                // Manejo silencioso si el navegador bloquea el contexto de audio
-            }
-        }
-
-        // Alternar estado de sonido
-        soundToggle.addEventListener('click', () => {
-            soundEnabled = !soundEnabled;
-            if (soundEnabled) {
-                soundIcon.textContent = '🔊';
-                soundText.textContent = 'Audio ON';
-                playKeyBeep(800, 0.08);
-            } else {
-                soundIcon.textContent = '🔇';
-                soundText.textContent = 'Audio OFF';
-            }
-        });
-
-        // Actualizar reloj en tiempo real
-        function updateTime() {
-            const now = new Date();
-            timeDisplay.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-
-        // Mostrar notificación temporal en la pantalla del teléfono
-        function showToast(msg) {
-            retroToast.textContent = msg;
-            retroToast.classList.add('show');
-            setTimeout(() => {
-                retroToast.classList.remove('show');
-            }, 1100);
-        }
-
-        // Seleccionar y mostrar información de una entrega
+<!-- ... existing code ... -->
+        // Seleccionar y mostrar información de una entrega o tecla especial
         function selectAssignment(id) {
+            const keyId = String(id);
             keys.forEach(k => {
-                if (k.getAttribute('data-id') === String(id)) {
+                if (k.getAttribute('data-id') === keyId) {
                     k.classList.add('active');
                 } else {
                     k.classList.remove('active');
@@ -604,21 +390,59 @@
             screenContent.classList.add('fade-out');
 
             setTimeout(() => {
-                if (entregas[id]) {
-                    screenTag.textContent = entregas[id].tag;
-                    screenTitle.textContent = entregas[id].title;
-                    screenDesc.textContent = entregas[id].desc;
-                    currentUrl = entregas[id].url;
-                    playKeyBeep(650 + (parseInt(id) * 35), 0.06);
+                if (keyId === '*') {
+                    currentId = '*';
+                    screenTag.textContent = "TALLER DE INTERFACES";
+                    screenTitle.textContent = "MI PORTAFOLIO";
+                    screenDesc.textContent = "Presiona las teclas (1 al 9) para ver cada entrega (0 lista para próxima tarea). Presiona OK (Centro) para abrir.";
+                    currentUrl = "#";
+                    playKeyBeep(520, 0.06);
+                } else if (keyId === '#') {
+                    currentId = '#';
+                    screenTag.textContent = "ÍNDICE RÁPIDO [1-0]";
+                    screenTitle.textContent = "MAPA DE TECLAS";
+                    screenDesc.textContent = "1:Interfaces | 2:Sonido | 3:Max | 4:Sonif | 5:Arduino | 6:Morse | 7:VR | 8:MediaPipe | 9:Chile | 0:Próxima";
+                    currentUrl = "#";
+                    playKeyBeep(780, 0.06);
+                } else if (entregas[keyId]) {
+                    currentId = keyId;
+                    screenTag.textContent = entregas[keyId].tag;
+                    screenTitle.textContent = entregas[keyId].title;
+                    screenDesc.textContent = entregas[keyId].desc;
+                    currentUrl = entregas[keyId].url;
+                    const noteIndex = keyId === '0' ? 10 : parseInt(keyId, 10);
+                    playKeyBeep(620 + (noteIndex * 32), 0.06);
                 } else {
-                    screenTag.textContent = `TECLA [${id}]`;
+                    currentId = keyId;
+                    screenTag.textContent = `TECLA [${keyId}]`;
                     screenTitle.textContent = "SIN ENTREGA";
-                    screenDesc.textContent = "No hay ningún encargo asignado a esta tecla. Utiliza los botones del 1 al 8.";
+                    screenDesc.textContent = "No hay ningún encargo asignado a esta tecla. Utiliza los botones del 1 al 9 o 0.";
                     currentUrl = "#";
                     playKeyBeep(320, 0.08);
                 }
                 screenContent.classList.remove('fade-out');
             }, 100);
+        }
+
+        // Abrir visor integrado con barra superior y botón Volver al Celular
+        function openViewer(item) {
+            viewerTag.textContent = item.tag;
+            viewerTitle.textContent = item.title;
+            btnExternalLink.href = item.url;
+            viewerIframe.src = item.url;
+            viewerOverlay.classList.add('open');
+            viewerOverlay.setAttribute('aria-hidden', 'false');
+        }
+
+        // Cerrar visor integrado y volver al Nokia 6630
+        function closeViewer() {
+            if (!viewerOverlay.classList.contains('open')) return;
+            playKeyBeep(480, 0.08);
+            viewerOverlay.classList.remove('open');
+            viewerOverlay.setAttribute('aria-hidden', 'true');
+            setTimeout(() => {
+                viewerIframe.src = "about:blank";
+            }, 250);
         }
 
         // Ejecutar apertura de la entrega seleccionada
@@ -627,18 +451,23 @@
             setTimeout(() => btnCenter.classList.remove('active'), 150);
 
             if (currentUrl && currentUrl !== "#") {
+                const selectedItem = entregas[currentId] || {
+                    tag: screenTag.textContent,
+                    title: screenTitle.textContent,
+                    url: currentUrl
+                };
                 playKeyBeep(950, 0.1);
                 showToast("ABRIENDO...");
                 setTimeout(() => {
-                    window.location.href = currentUrl;
-                }, 250);
+                    openViewer(selectedItem);
+                }, 220);
             } else {
                 playKeyBeep(280, 0.12);
-                showToast("SIN ENLACE");
+                showToast(currentId === '0' ? "ESPACIO LIBRE" : "SIN ENLACE");
             }
         }
 
-        // Eventos clic en teclas numéricas 1 al 9
+        // Eventos clic en teclas numéricas y especiales (*, 0, #)
         keys.forEach(key => {
             key.addEventListener('click', () => {
                 const id = key.getAttribute('data-id');
@@ -646,12 +475,23 @@
             });
         });
 
-        // Evento clic en botón central OK
+        // Evento clic en botón central OK y botón Volver al Celular
         btnCenter.addEventListener('click', openCurrentAssignment);
+        btnBackToPhone.addEventListener('click', closeViewer);
 
-        // Soporte para teclado físico (teclas 1-9 y Enter/Espacio para OK)
+        // Soporte para teclado físico (0-9, *, #, Enter/Espacio para OK y Escape para volver)
         document.addEventListener('keydown', (e) => {
-            if (e.key >= '1' && e.key <= '9') {
+            if (e.key === 'Escape') {
+                if (viewerOverlay.classList.contains('open')) {
+                    e.preventDefault();
+                    closeViewer();
+                }
+                return;
+            }
+
+            if (viewerOverlay.classList.contains('open')) return;
+
+            if ((e.key >= '0' && e.key <= '9') || e.key === '*' || e.key === '#') {
                 selectAssignment(e.key);
             } else if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();

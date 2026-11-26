@@ -1,4 +1,4 @@
-# 📱 Portafolio Digital — Taller de Interfaces (Nokia 6630)
+# 📱 Portafolio Digital — Taller de Interfaces
 
 Portafolio web interactivo diseñado con la estética retro metálica de un **Nokia 6630** para reunir y presentar las entregas del curso **Taller de Interfaces** de la carrera de **Ingeniería Civil en Diseño** en la **Universidad Adolfo Ibáñez (UAI)**.
 
